@@ -17,5 +17,18 @@ namespace ejemploUniversidadREST.Controllers
                 return BadRequest($"Error: {ex.Message}");
             }
         }
+
+        [HttpGet("prueba2/{val}")] // http://localhost:5128/api/ejemplo1/prueba2/CualquierValor
+        public async Task<IActionResult> prueba2(string val)
+        {
+            try
+            {
+                return Ok("Prueba 2 exitosa: " + val);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error: {ex.Message}");
+            }
+        }
     }
 }
